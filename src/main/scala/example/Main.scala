@@ -1,8 +1,8 @@
 package example
 
-import typings.vue.{Vue, VueApp}
-
-import scala.scalajs.js.Dynamic.literal as JSObject
+import typings.vue.*
+import typings.vue.syntax.All.*
+import scalatags.Text.all.*
 
 @main
 def run(): Unit =
@@ -10,12 +10,20 @@ def run(): Unit =
 
   val app =
     Vue.createApp(
-      JSObject(
+      ^(
         data = () =>
-          JSObject(
-            msg = "Hello Vue!"
+          ^(
+            msg = "Hello Vue!",
+            count = 0
           ),
-        template = """{{msg}}"""
+        template = div(
+          h2 {
+            "{{msg}}"
+          },
+          button(vOn"click" := "count++") {
+            "Count is: {{count}}"
+          }
+        ).toString
       )
     )
 
