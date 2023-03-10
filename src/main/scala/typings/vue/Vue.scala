@@ -32,7 +32,8 @@ object Vue extends js.Object with AppConstructor with General with Reactivity wi
   def watchEffect(effect: js.Object, options: js.UndefOr[js.Object] = js.undefined): js.Dynamic = js.native
   def watchPostEffect(effect: js.Object, options: js.UndefOr[js.Object] = js.undefined): js.Dynamic = js.native
   def watchSyncEffect(effect: js.Object, options: js.UndefOr[js.Object] = js.undefined): js.Dynamic = js.native
-  def watch(source: js.Object, callback: js.Object, options: js.UndefOr[js.Object] = js.undefined): js.Dynamic = js.native
+  def watch(source: js.Object, callback: js.Object, options: js.UndefOr[js.Object] = js.undefined): js.Dynamic =
+    js.native
 
   // ReactivityUtilities
   def isRef(r: js.Any): js.Dynamic = js.native
