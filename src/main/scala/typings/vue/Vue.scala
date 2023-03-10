@@ -14,8 +14,8 @@ final val VUE = "vue"
 object Vue extends js.Object with AppConstructor with General with Reactivity with Lifecycle with Injection:
 
   // AppConstructor
-  def createApp(rootComponent: js.Object, rootProps: js.UndefOr[js.Object] = js.undefined): App = js.native
-  def createSSRApp(rootComponent: js.Object, rootProps: js.UndefOr[js.Object] = js.undefined): App = js.native
+  def createApp(rootComponent: js.Object, rootProps: js.UndefOr[js.Object] = js.undefined): VueApp = js.native
+  def createSSRApp(rootComponent: js.Object, rootProps: js.UndefOr[js.Object] = js.undefined): VueApp = js.native
 
   // General
   def version: String = js.native

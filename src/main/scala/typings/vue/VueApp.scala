@@ -5,13 +5,9 @@ import org.scalajs.dom.Element
 
 import scala.scalajs.js
 import scala.scalajs.js.|
-import scala.scalajs.js.annotation.JSImport
-import scala.scalajs.js.annotation.JSGlobal
 
 @js.native
-// @JSImport(VUE, JSImport.Namespace)
-@JSGlobal
-class VueApp extends js.Object with App:
+trait VueApp extends js.Object with App:
   self =>
   def mount(rootContainer: Element | String): js.Dynamic = js.native
   def unmount(): Unit = js.native
