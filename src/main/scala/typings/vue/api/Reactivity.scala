@@ -6,7 +6,7 @@ trait Reactivity extends js.Object with ReactivityCore with ReactivityUtilities 
 
 trait ReactivityCore extends js.Object:
   def ref(value: js.Any): js.Dynamic
-  def computed(options: js.Object): js.Dynamic
+  def computed(options: js.Object, debuggerOptions: js.UndefOr[js.Object] = js.undefined): js.Dynamic
   def reactive(target: js.Object): js.Dynamic
   def readonly(target: js.Object): js.Dynamic
   def watchEffect(effect: js.Object, options: js.UndefOr[js.Object] = js.undefined): js.Dynamic
@@ -15,8 +15,8 @@ trait ReactivityCore extends js.Object:
   def watch(source: js.Object, callback: js.Object, options: js.UndefOr[js.Object] = js.undefined): js.Dynamic
 
 trait ReactivityUtilities extends js.Object:
-  def isRef(r: js.Object): js.Dynamic
-  def unref(ref: js.Object): js.Dynamic
+  def isRef(r: js.Any): js.Dynamic
+  def unref(ref: js.Any): js.Dynamic
   def toRef(`object`: js.Object, key: js.Any, defaultValue: js.UndefOr[js.Any] = js.undefined): js.Dynamic
   def toRefs(`object`: js.Object): js.Dynamic
   def isProxy(value: js.Any): Boolean
@@ -31,6 +31,6 @@ trait ReactivityAdvanced extends js.Object:
   def shallowReadonly(target: js.Object): js.Dynamic
   def toRaw(proxy: js.Any): js.Dynamic
   def markRaw(value: js.Object): js.Dynamic
-  def effectScope(detached: js.UndefOr[Boolean]): js.Dynamic
+  def effectScope(detached: js.UndefOr[Boolean] = js.undefined): js.Dynamic
   def getCurrentScope(): js.UndefOr[js.Dynamic]
   def onScopeDispose(fn: js.Function0[Unit]): Unit
